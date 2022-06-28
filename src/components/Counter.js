@@ -1,14 +1,12 @@
 import { Button, StyleSheet, Text, View } from "react-native";
-import { useDispatch, useSelector } from "react-redux";
 import {
 	decreaseCounter,
 	increaseCounter,
 } from "../../redux/actions/counterActions";
+import useCounter from "../hooks/useCounter";
 
 const Counter = () => {
-	const dispatch = useDispatch();
-	const state = useSelector(state => state);
-	console.log(state);
+	const [state, dispatch] = useCounter();
 
 	return (
 		<View>
